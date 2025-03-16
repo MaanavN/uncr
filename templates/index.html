@@ -15,7 +15,7 @@
     
 </script>
 
-    <title>UncR</title>
+    <title>UNCR</title>
     <style>
         * {
             margin: 0;
@@ -210,7 +210,8 @@
         }
 
         .user .message-bubble {
-            background: #007bff;
+            /* background: #007bff; */
+            background: linear-gradient(45deg, #fe3c72, #4e4376);
             color: white;
             border-radius: 18px 18px 4px 18px;
         }
@@ -382,7 +383,7 @@
                 <div class="chat-messages" style="flex-grow: 1; padding: 10px; overflow-y: auto; margin-bottom: 60px;"></div>
                 <div class="chat-input-container">
                     <input type="text" class="chat-input" placeholder="Type a message..." style="flex-grow: 1; padding: 10px; border: none; border-top: 1px solid #ccc;">
-                    <button onclick="sendMessage()" style="padding: 10px 15px; border: none; background-color: #007bff; color: white; cursor: pointer; -webkit-tap-highlight-color: transparent;">Send</button>
+                    <button onclick="sendMessage()" style="padding: 10px 15px; border: none; background-color: #4e4376; color: white; cursor: pointer; -webkit-tap-highlight-color: transparent;">Send</button>
                 </div>
             `;
             document.body.appendChild(chatWindow);
@@ -420,7 +421,7 @@
                     return;
                 }
                 
-                if (direction === 'right') {
+                if (direction === 'right' && currentPerson.heading !== 'UNCR') {
                     openChat(currentPerson);
                 }
                 moveToNextCard();
