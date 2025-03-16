@@ -539,7 +539,7 @@
             .then(data => {
                 displayAIMessage(data.response);
                 try {
-                    const utterance = new SpeechSynthesisUtterance(message);
+                    const utterance = new SpeechSynthesisUtterance("You said " + message);
                     utterance.rate = 1;
                     utterance.pitch = 1;
                     utterance.lang = 'en-US';
