@@ -413,16 +413,17 @@
             currentCard.style.opacity = 0;
 
             setTimeout(() => {
-                if (direction === 'right') {
-                    // Only open chat if it's not the first card
-                    if (currentCardIndex !== 0) {
-                        currentPerson = cardsData[currentCardIndex];
-                        openChat(currentPerson);
-                    }
-                    moveToNextCard();
-                } else {
-                    moveToNextCard();
+                currentPerson = cardsData[currentCardIndex];
+                
+                if (currentPerson.heading === 'Refresh') {
+                    window.location.href = '/uncs';
+                    return;
                 }
+                
+                if (direction === 'right') {
+                    openChat(currentPerson);
+                }
+                moveToNextCard();
             }, 300);
         }
 

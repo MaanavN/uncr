@@ -48,6 +48,16 @@ def create_cards():
             'description': str(uncs.iloc[idx][1])
         }
         cards.append(unc)
+
+    cards.append(
+        {
+            'heading': 'Refresh',
+            'subheading': 'No more uncs in your area!<br>Swipe ← or Swipe →<br>To refresh',
+            'name': '',
+            'image': 'https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png',
+            'description': ''
+        }
+    )
     
     return cards
 
@@ -81,6 +91,14 @@ def home():
     cards = create_cards()
 
     return render_template('index.html', cards=cards)
+
+
+@app.route('/uncs')
+def uncs_page():
+    cards = create_cards()
+    cards.pop(0)
+
+    return render_template('index.html', cards = cards)
 
 
 
