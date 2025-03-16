@@ -32,7 +32,7 @@ def create_cards():
 
     cards = [
         {
-            'heading': 'UncR',
+            'heading': 'UNCR',
             'subheading': 'Find your perfect unc!<br>Swipe ← for No &nbsp; Swipe → for Yes',
             'name': '',
             'image': 'https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png',
